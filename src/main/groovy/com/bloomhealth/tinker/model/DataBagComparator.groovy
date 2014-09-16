@@ -23,7 +23,7 @@ class DataBagComparator {
             Item b = dataBagB.items.find { it.name == a.name }
             if (b) {
                 List<ItemKeyDiff> itemDiffs = ItemComparator.compare(a, b)
-                itemDiffs.each { it.dataBagName == dataBagA.name }
+                itemDiffs.each { it.dataBagName = dataBagA.name }
                 diffs.addAll(itemDiffs)
             }
         }
