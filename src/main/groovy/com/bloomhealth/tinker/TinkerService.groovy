@@ -15,7 +15,7 @@ class TinkerService {
     }
 
     private File getRootDir() {
-        new File(System.getenv('DATABAG_HOME') ?: '/Users/jengelman/workspace/bloom/infrastructure/bloom-databags')
+        new File(System.getenv('DATABAG_HOME') ?: '/Users/rzienert/bloom/bloom-databags-temp')
     }
 
     private List<Container> loadContainers(File root) {

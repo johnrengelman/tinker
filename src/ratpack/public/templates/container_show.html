@@ -1,0 +1,40 @@
+<h1 class="page-header">
+  {{container}} <small>container</small>
+  <span class="pull-right">
+    <select class="form-control" id="compare" ng-init="compareContainer = options[0]"
+            ng-options="c.name for c in containers"
+            ng-model="compareContainer"
+            ng-change="compare()">
+      <option value="">Compare To...</option>
+    </select>
+  </span>
+</h1>
+
+<h2 class="page-header">DataBags</h2>
+
+<div ng-repeat="dataBag in dataBags">
+  <h3 class="page-header">{{dataBag.name}}</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th width="30%">id</th>
+        <th width="30%">name</th>
+        <th width="40%">keys</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in dataBag.items">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>
+          <ul class="key-list">
+            <li ng-repeat="key in item.itemKeys">
+              {{key.name}}
+              <span ng-show="key.encrypted" class="text-info glyphicon glyphicon-lock"></span>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

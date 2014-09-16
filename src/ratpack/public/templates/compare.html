@@ -1,0 +1,78 @@
+<h1 class="page-header">
+  Compare View
+  <small>({{leftName}} vs. {{rightName}})</small>
+  <small ng-if="dataBag">using databag "{{dataBag}}"</small>
+  <button ng-click="refreshCompare()" ng-href="#here" class="btn btn-primary pull-right">Refresh</button>
+</h1>
+
+<div ng-switch on="matching">
+  <div ng-switch-when="true">
+    <div class="alert alert-success" role="alert">
+      <div class="row">
+        <div class="col-md-1">
+          <span class="glyphicon glyphicon-ok"></span>
+        </div>
+        <div class="col-md-10">
+          <strong>OK!</strong><br>
+          "<em>{{rightName}}</em>" appears to match "<em>{{leftName}}</em>". There's nothing to do here.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-switch-default>
+    <div class="alert alert-warning" role="alert">
+      <div class="row">
+        <div class="col-md-1">
+          <span class="glyphicon glyphicon-warning-sign"></span>
+        </div>
+        <div class="col-md-10">
+          <strong>Containers do not match!</strong><br>
+          Make sure to update the "<em>{{rightName}}</em>" container with the changes you've made to "<em>{{leftName}}</em>".
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{leftName}}</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>DataBag</td>
+              <td>Item</td>
+              <td>Name</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in leftData" class="{{item.style}}">
+              <td colspan="3" ng-show="item.colspan">{{item.data[0]}}</td>
+              <td ng-show="!item.colspan">{{item.data[0]}}</td>
+              <td ng-show="!item.colspan">{{item.data[1]}}</td>
+              <td ng-show="!item.colspan">{{item.data[2]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h3>{{rightName}}</h3>
+        <table class="table">
+          <thead>
+          <tr>
+            <td>DataBag</td>
+            <td>Item</td>
+            <td>Name</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in rightData" class="{{item.style}}">
+            <td colspan="3" ng-show="item.colspan">{{item.data[0]}}</td>
+            <td ng-show="!item.colspan">{{item.data[0]}}</td>
+            <td ng-show="!item.colspan">{{item.data[1]}}</td>
+            <td ng-show="!item.colspan">{{item.data[2]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

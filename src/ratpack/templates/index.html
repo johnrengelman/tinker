@@ -11,18 +11,20 @@
   <meta name="viewport" content="width=device-width">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+
   <!-- Custom styles for this template -->
-  <link href="styles/dashboard.css" rel="stylesheet">
+  <link href="/styles/dashboard.css" rel="stylesheet">
+
+  <link href="/styles/tinker.css" rel="stylesheet">
 
   <!-- build:js scripts/modernizr.js -->
   <!--<script src="lib/modernizr/modernizr.js"></script>-->
   <!-- endbuild -->
 </head>
 
-<body>
-
+<body ng-app="tinkerApp">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -57,42 +59,7 @@
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Databag Contents</h1>
-
-            <div class="row">
-                <div class="col-xs-6 col-sm-3">
-                    <h4>Passwords</h4>
-                    <div class="row">
-                        <div class="col-xs-12 co-sm-12">
-                            <h2>Active Directory</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 co-sm-12">
-                            <span>AD Users</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 co-sm-12">
-                            <span>Github</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 co-sm-12">
-                            <span>Duply</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 co-sm-12">
-                            <span>Test Kitchen EC2</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <h4>SSL</h4>
-                    <span class="text-muted">Something else</span>
-                </div>
-            </div>
+            <div ng-view></div>
         </div>
     </div>
 </div>
@@ -101,10 +68,13 @@
 <script>
 </script>
 
-<script src="lib/jquery/dist/jquery.min.js"></script>
-<script src="lib/angular/angular.min.js"></script>
-<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular-route/angular-route.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/lib/lodash/dist/lodash.min.js"></script>
+<script src="/js/tinker.js"></script>
 
 </body>
 </html>
